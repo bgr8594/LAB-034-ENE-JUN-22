@@ -12,9 +12,10 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
-    path: 'presupuesto',
-    loadChildren: () => import('./presupuesto/presupuesto.module').then( m => m.PresupuestoPageModule)
+    path: 'presupuesto01',
+    loadChildren: () => import('./presupuesto01/presupuesto01.module').then( m => m.Presupuesto01PageModule)
   },
+
 ];
 
 @NgModule({
