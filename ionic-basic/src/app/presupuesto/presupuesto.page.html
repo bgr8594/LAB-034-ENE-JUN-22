@@ -24,11 +24,74 @@
 			<ion-input type="number" [(ngModel)]="amount" placeholder="Ingrese el amount"></ion-input>
 		</ion-item>
 		<ion-item>
+			<ion-label>Descripción: </ion-label>
+			<ion-input type="text" [(ngModel)]="desc" placeholder="Describa el gasto"></ion-input>
+		</ion-item>
+		<ion-item>
 			<ion-button type="button" (click)="guardar()">Guardar</ion-button>
 		</ion-item>
 		<ion-item>
 			<ion-label>Resultados: </ion-label>
-			<ion-textarea color="{{errors}}" [(ngModel)]="results" clearOnEdit="true" readonly="true"></ion-textarea>
+			<ion-textarea rows="3" color="{{errors}}" [(ngModel)]="results" clearOnEdit="true" readonly="true"></ion-textarea>
 		</ion-item>
+
 	</ion-list>
+
+	<ion-grid class="ion-text-center">
+		<ion-row class="ion-margin">
+			<ion-col>
+				<ion-title>
+					<ion-text color="default">
+						Desglose de gastos
+					</ion-text>
+				</ion-title>
+			</ion-col>
+		</ion-row>
+
+		<ion-row class="header-row">
+			<ion-col>
+				<ion-text>ID</ion-text>
+			</ion-col>
+
+			<ion-col>
+				<ion-text>Descripción</ion-text>
+			</ion-col>
+
+			<ion-col>
+				<ion-text>Monto</ion-text>
+			</ion-col>
+
+			<ion-col>
+				<ion-text>Tipo</ion-text>
+			</ion-col>
+
+			<ion-col>
+				<ion-text>Eliminar</ion-text>
+			</ion-col>
+		</ion-row>
+
+
+		<ion-row *ngFor="let gasto of dictGastos">
+			<ion-col>
+				<ion-text>{{ gasto["id"] }}</ion-text>
+			</ion-col>
+
+			<ion-col>
+				<ion-text>{{ gasto["desc"] }}</ion-text>
+			</ion-col>
+
+			<ion-col>
+				<ion-text>{{ gasto["amount"] }}</ion-text>
+			</ion-col>
+
+			<ion-col>
+				<ion-text>{{ gasto["tipo"] }}</ion-text>
+			</ion-col>
+
+			<ion-col (click)="eliminarGasto(gasto['id'])">
+				<ion-icon name="close-outline"></ion-icon>
+			</ion-col>
+		</ion-row>
+
+	</ion-grid>
 </ion-content>

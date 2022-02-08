@@ -13,6 +13,8 @@ export class PresupuestoPage implements OnInit {
 	public amount: number;
 	public results: string;
 	public errors: string='light';
+	public desc: string;
+	public dictGastos: object[] = [];
 
 	constructor() {}
 
@@ -28,10 +30,16 @@ export class PresupuestoPage implements OnInit {
 		console.log(value);
 	}
 
+	eliminarGasto(id) {
+		this.dictGastos = this.dictGastos.filter(obj => obj["id"] !== id);
+	}
+
 	guardar() {
-		if(this.amount != null && this.selected != null) {
+		if(this.amount != null && this.selected != null && this.desc != null) {
 			this.errors = 'success';
-			this.results = 'Tipo de gasto seleccionado: ' + this.selected + ' \nMonto: ' + this.amount;
+			this.results = 'Tipo de gasto seleccionado: ' + this.selected + '\nMonto: ' + this.amount + "\nDescripción: " + this.desc;
+			this.dictGastos.push({"id": this.dictGastos.length, "tipo": this.selected, "amount": this.amount, "desc": this.desc})
+			console.log(this.dictGastos)
 		} else {
 			this.errors = 'danger';
 			this.results = "¡Debe completar el formulario!";
