@@ -1,27 +1,27 @@
 import { Component, OnInit } from '@angular/core';
-import { Gasto } from '../models/gasto.model';
-import { GastoService } from '../services/gasto.service';
+import { Gasto } from '../models/gastos.model';
+import { GastosService } from '../services/gastos.service';
 
 @Component({
   selector: 'app-presupuesto',
-  templateUrl: './presupuesto.page.html'
+  templateUrl: './presupuesto.page.html',
+  styleUrls: ['./presupuesto.page.scss'],
 })
 export class PresupuestoPage implements OnInit {
 
+  
   public gastos: string[]=['Directos','Fijos', 'Variables'];
   public selectedValue: any;
   public monto: number;
-  public resultados: string;
-  public errResultados: string='light';
-  public descripcion: string;
-  public tipoGasto: string='';
   public gasotsList: Gasto[]=[];
+  public resultados: string;
+  public descripcion: string;
+  public errResultados: string='light';
 
-  constructor(private gastosService: GastoService) { }
+  constructor(private gastosService: GastosService) { }
 
   ngOnInit() {
   }
-
 
   customPopoverOptions: any = {
     header: 'Seleccion de gasots',
@@ -32,7 +32,7 @@ export class PresupuestoPage implements OnInit {
   cambioValor(value){
     console.log(value);
   }
- 
+  
   guardar(){
     this.resultados ="";
     if(this.monto!=null && this.selectedValue!=null && this.descripcion!= null){
@@ -57,5 +57,5 @@ export class PresupuestoPage implements OnInit {
     this.gastosService.borrarGasto(idGasto);
     this.gasotsList = this.gastosService.getGastos();
   }
-
+  
 }
