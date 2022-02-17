@@ -5,9 +5,11 @@ import { Gasto } from '../models/gastos.model';
   providedIn: 'root'
 })
 export class GastosService {
-  gastos: Gasto[] = [];
 
+  gastos: Gasto[]=[];
+  
   constructor() { }
+
   agregar(gasto: Gasto){
     if(this.gastos.length==0){
       gasto.id = 1;
@@ -25,4 +27,5 @@ export class GastosService {
   getGastos(){
     return this.gastos;
   }
+  
 }
