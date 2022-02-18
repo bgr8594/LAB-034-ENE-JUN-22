@@ -1,0 +1,44 @@
+import { Component, OnInit } from '@angular/core';
+import { Personaje } from '../models/personaje';
+import { ServicioCService } from '../services/servicio-c.service';
+
+@Component({
+  selector: 'app-receiver',
+  templateUrl: './receiver.page.html',
+  styleUrls: ['./receiver.page.scss'],
+})
+export class ReceiverPage implements OnInit {
+
+  user: any;
+  list: any[];
+  personajes: Personaje[];
+  personajesPropiedades: any[];
+  propiedades: string[];
+  
+  constructor(private servicioCService: ServicioCService) { }
+
+  ngOnInit() {
+    this.servicioCService.$getObjectSource.subscribe(data=>{
+      console.log(data);
+      this.user = data;
+    }).unsubscribe();
+    this.servicioCService.$getListSource.subscribe(data=>{
+      console.log(data);
+      this.list = data;
+    }).unsubscribe();
+
+    this.servicioCService.getPersonajes().subscribe((response: any)=>{
+      this.personajes = response.results;
+      this.propiedades = Object.getOwnPropertyNames(this.personajes[0]);
+      this.personajesPropiedades = this.personajes.map(a => this.objToDict(a));
+    });
+  }
+
+  objToDict(obj) {
+	  return Object.keys(obj).reduce((result, key) => {
+		  result[key] = obj[key];
+		  return result;
+	  }, {});
+  }
+
+}
