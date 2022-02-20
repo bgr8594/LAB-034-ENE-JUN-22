@@ -53,6 +53,5 @@ export class PresupuestoPage implements OnInit {
       this.resultados ="No a completado los campos del formulario";
     }
   }  
-  } 
-
+} 
 }
