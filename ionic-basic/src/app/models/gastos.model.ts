@@ -1,4 +1,4 @@
-export interface Gasto{
+export interface Gastos{
     monto: number;
     descripcion:string;
     tipo: string;

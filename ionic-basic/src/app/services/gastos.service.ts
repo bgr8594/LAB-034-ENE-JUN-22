@@ -1,16 +1,16 @@
 import { Injectable } from '@angular/core';
-import { Gasto } from '../models/gastos.model';
+import { Gastos } from '../models/gastos.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class GastosService {
 
-  gastos: Gasto[]=[];
+  gastos: Gastos[]=[];
 
   constructor() { }
 
-  agregar(gasto: Gasto){
+  agregar(gasto: Gastos){
     if(this.gastos.length==0){
       gasto.id = 1;
     } else{

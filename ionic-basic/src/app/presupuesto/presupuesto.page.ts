@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Gasto } from '../models/gastos.model';
+import { Gastos } from '../models/gastos.model';
 import { GastosService } from '../services/gastos.service';
 
 @Component({
@@ -13,7 +13,7 @@ export class PresupuestoPage implements OnInit {
   public gastos: string[]=['Directos','Fijos', 'Variables'];
   public selectedValue: any;
   public monto: number;
-  public gasotsList: Gasto[]=[];
+  public gasotsList: Gastos[]=[];
   public resultados: string;
   public descripcion: string;
   public errResultados: string='light';
@@ -39,7 +39,7 @@ export class PresupuestoPage implements OnInit {
       this.errResultados = 'success';
       this.resultados = 'Gasto seleccionado: '+this.selectedValue+' \nMonto: '+this.monto+'\n'+
       'Descricion: '+this.descripcion;
-      let gasto: Gasto = {
+      let gasto: Gastos = {
       descripcion: this.descripcion,
       tipo: this.selectedValue,
       monto: this.monto
