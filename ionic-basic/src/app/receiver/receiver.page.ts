@@ -31,6 +31,10 @@ export class ReceiverPage implements OnInit {
       this.personajes = response.results;
       this.propiedades = Object.getOwnPropertyNames(this.personajes[0]);
       this.personajesPropiedades = this.personajes.map(a => this.objToDict(a));
+    },
+    (err: any) => {
+	    this.propiedades = ["response"]
+	    this.personajesPropiedades = [{response: "error"}]
     });
   }
 
