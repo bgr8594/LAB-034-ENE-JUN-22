@@ -8,18 +8,25 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'alumnos',
+    redirectTo: 'inicio',
     pathMatch: 'full'
   },
   {
     path: 'presupuesto',
     loadChildren: () => import('./presupuesto/presupuesto.module').then( m => m.PresupuestoPageModule)
   },
-
   {
-  path: 'alumnos',
-  loadChildren: () => import('./alumnos/alumnos.module').then( m => m.AlumnosPageModule)
+    path: 'alumnos',
+    loadChildren: () => import('./alumnos/alumnos.module').then( m => m.AlumnosPageModule)
+  },  {
+    path: 'inicio',
+    loadChildren: () => import('./inicio/inicio.module').then( m => m.InicioPageModule)
+  },
+  {
+    path: 'reciever',
+    loadChildren: () => import('./reciever/reciever.module').then( m => m.RecieverPageModule)
   }
+
 ];
 
 @NgModule({
