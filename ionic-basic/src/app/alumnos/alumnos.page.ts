@@ -23,7 +23,7 @@ export class AlumnosPage implements OnInit {
       matricula: '745589'},
       {id:2, nombre: 'Isela Rodriguez',
       matricula: '855449'},
-      {id:3, nombre: 'Estenban',
+      {id:3, nombre: 'Esteban Del Mercado',
       matricula: '0021554'}
     ]);
     this.alumnos = this.alumnoService.getAlumos();
