@@ -8,7 +8,7 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'inicio',
+    redirectTo: 'home',
     pathMatch: 'full'
   },
   {
@@ -25,7 +25,15 @@ const routes: Routes = [
   {
     path: 'reciever',
     loadChildren: () => import('./reciever/reciever.module').then( m => m.RecieverPageModule)
-  }
+  },
+  {
+    path: 'receta',
+    loadChildren: () => import('./receta/receta.module').then( m => m.RecetaPageModule)
+  },
+  {
+    path: 'detalle-receta',
+    loadChildren: () => import('./detalle-receta/detalle-receta.module').then( m => m.DetalleRecetaPageModule)
+  },
 
 ];
 
