@@ -1,0 +1,126 @@
+warning: LF will be replaced by CRLF in ionic-basic/.gitignore.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in ionic-basic/src/app/app-routing.module.ts.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in ionic-basic/src/app/presupuesto/presupuesto.page.html.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in ionic-basic/src/app/presupuesto/presupuesto.page.ts.
+The file will have its original line endings in your working directory
+[1mdiff --git a/ionic-basic/.gitignore b/ionic-basic/.gitignore[m
+[1mindex e087ef3..479076c 100644[m
+[1m--- a/ionic-basic/.gitignore[m
+[1m+++ b/ionic-basic/.gitignore[m
+[36m@@ -30,3 +30,4 @@[m [mnpm-debug.log*[m
+ /platforms[m
+ /plugins[m
+ /www[m
+[32m+[m[32m.node_modules[m
+\ No newline at end of file[m
+[1mdiff --git a/ionic-basic/src/app/app-routing.module.ts b/ionic-basic/src/app/app-routing.module.ts[m
+[1mindex 6ca39aa..f7789a8 100644[m
+[1m--- a/ionic-basic/src/app/app-routing.module.ts[m
+[1m+++ b/ionic-basic/src/app/app-routing.module.ts[m
+[36m@@ -14,7 +14,7 @@[m [mconst routes: Routes = [[m
+   {[m
+     path: 'presupuesto',[m
+     loadChildren: () => import('./presupuesto/presupuesto.module').then( m => m.PresupuestoPageModule)[m
+[31m-  },[m
+[32m+[m[32m  }[m
+ ];[m
+ [m
+ @NgModule({[m
+[1mdiff --git a/ionic-basic/src/app/presupuesto/presupuesto.page.html b/ionic-basic/src/app/presupuesto/presupuesto.page.html[m
+[1mindex 6878115..2e3fb78 100644[m
+[1m--- a/ionic-basic/src/app/presupuesto/presupuesto.page.html[m
+[1m+++ b/ionic-basic/src/app/presupuesto/presupuesto.page.html[m
+[36m@@ -1,9 +1,42 @@[m
+[31m-<ion-header>[m
+[32m+[m[32m<ion-header [translucent]="true">[m
+   <ion-toolbar>[m
+[31m-    <ion-title>presupuesto</ion-title>[m
+[32m+[m[32m      <ion-title>[m
+[32m+[m[32m          Presupuesto[m
+[32m+[m[32m      </ion-title>[m
+   </ion-toolbar>[m
+ </ion-header>[m
+ [m
+[31m-<ion-content>[m
+[31m-[m
+[32m+[m[32m<ion-content [fullscreen]="true">[m
+[32m+[m[32m  <ion-header collapse="condense">[m
+[32m+[m[32m      <ion-toolbar>[m
+[32m+[m[32m          <ion-title size="large">Presupuesto</ion-title>[m
+[32m+[m[32m      </ion-toolbar>[m
+[32m+[m[32m  </ion-header>[m
+[32m+[m[32m  <ion-list>[m
+[32m+[m[32m      <ion-list-header>[m
+[32m+[m[32m          <ion-label>[m
+[32m+[m[32m              Tipo de astos y monto[m
+[32m+[m[32m          </ion-label>[m
+[32m+[m[32m      </ion-list-header>[m
+[32m+[m[32m      <ion-item>[m
+[32m+[m[32m          <ion-label>Gastos</ion-label>[m
+[32m+[m[32m          <ion-select [(ngModel)]="selectedValue" multiple="false" (ionChange)="cambioValor(selectedValue)">[m
+[32m+[m[32m              <ion-select-option [value]="option" *ngFor="let option of  gastos">{{option}}[m
+[32m+[m[32m              </ion-select-option>[m
+[32m+[m[32m          </ion-select>[m
+[32m+[m[32m      </ion-item>[m
+[32m+[m[32m      <ion-item>[m
+[32m+[m[32m          <ion-label>[m
+[32m+[m[32m              Monto:[m
+[32m+[m[32m          </ion-label>[m
+[32m+[m[32m          <ion-input type="number" [(ngModel)]="monto" placeholder="Ingrese el monto"></ion-input>[m
+[32m+[m[32m      </ion-item>[m
+[32m+[m[32m      <ion-item>[m
+[32m+[m[32m          <ion-button type="button" (click)="guardar()">Guardar</ion-button>[m
+[32m+[m[32m      </ion-item>[m
+[32m+[m[32m      <ion-item>[m
+[32m+[m[32m          <ion-label>Resultados</ion-label>[m
+[32m+[m[32m          <ion-textarea color="{{errResultados}}" [(ngModel)]="resultados" clearOnEdit="true" readonly="true"></ion-textarea>[m
+[32m+[m[32m      </ion-item>[m
+[32m+[m[32m  </ion-list>[m
+ </ion-content>[m
+[1mdiff --git a/ionic-basic/src/app/presupuesto/presupuesto.page.ts b/ionic-basic/src/app/presupuesto/presupuesto.page.ts[m
+[1mindex bdaa6d3..2a05448 100644[m
+[1m--- a/ionic-basic/src/app/presupuesto/presupuesto.page.ts[m
+[1m+++ b/ionic-basic/src/app/presupuesto/presupuesto.page.ts[m
+[36m@@ -7,9 +7,37 @@[m [mimport { Component, OnInit } from '@angular/core';[m
+ })[m
+ export class PresupuestoPage implements OnInit {[m
+ [m
+[32m+[m[41m  [m
+[32m+[m[32m  public gastos: string[]=['Directos','Fijos', 'Variables'];[m
+[32m+[m[32m  public selectedValue: any;[m
+[32m+[m[32m  public monto: number;[m
+[32m+[m[32m  public resultados: string;[m
+[32m+[m[32m  public errResultados: string='light';[m
+[32m+[m
+   constructor() { }[m
+ [m
+   ngOnInit() {[m
+   }[m
+ [m
+[31m-}[m
+[32m+[m[32m  customPopoverOptions: any = {[m
+[32m+[m[32m    header: 'Seleccion de gasots',[m
+[32m+[m[32m    subHeader: 'Seleccione el tipo de gasto',[m
+[32m+[m[32m    message: 'Solo seleccione un tipo de gasto'[m
+[32m+[m[32m  };[m
+[32m+[m
+[32m+[m[32m  cambioValor(value){[m
+[32m+[m[32m    console.log(value);[m
+[32m+[m[32m  }[m
+[32m+[m[32m  guardar(){[m
+[32m+[m[32m    this.resultados ="";[m
+[32m+[m[32m    if(this.monto!=null && this.selectedValue!=null){[m
+[32m+[m[32m      this.errResultados = 'success';[m
+[32m+[m[32m      this.resultados = 'Gasto seleccionado: '+this.selectedValue+' \nMonto: '+this.monto+'\n';[m
+[32m+[m[32m    }[m
+[32m+[m[32m    else{[m
+[32m+[m[32m      this.errResultados = 'danger';[m
+[32m+[m[32m      this.resultados ="No a completado los campos del formulario";[m
+[32m+[m[32m    }[m
+[32m+[m[32m  }[m[41m  [m
+[32m+[m
+[32m+[m[32m}[m
+\ No newline at end of file[m
