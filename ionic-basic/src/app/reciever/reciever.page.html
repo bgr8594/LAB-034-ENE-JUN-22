@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>reciever</ion-title>
+  </ion-toolbar>
+  <ion-back-button defaultHref="inicio"></ion-back-button>
+</ion-header>
+
+<ion-content>
+  <p>
+    {{user | json}}
+  </p>
+  
+  <ion-grid>
+    <ion-list>
+      <ion-row>
+        <ion-col size="4">Nombre</ion-col>
+        <ion-col size="4">Genero</ion-col>
+        <ion-col size="4">Nacimiento</ion-col>
+      </ion-row>
+      <ion-row *ngFor="let user of personajes">
+        <ion-col size="4">{{user.name}}</ion-col>
+        <ion-col size="4">{{user.gender}}</ion-col>
+        <ion-col size="4">{{user.birth_year}}</ion-col>
+      </ion-row>
+    </ion-list>
+  </ion-grid>
+</ion-content>
