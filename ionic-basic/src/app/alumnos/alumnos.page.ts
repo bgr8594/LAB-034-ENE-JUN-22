@@ -15,7 +15,7 @@ export class AlumnosPage implements OnInit {
   estado: string;
   idActualizar: number;
   error: boolean = false;
-
+ 
   constructor( private alumnoService: AlumnoService) { 
 
     this.alumnoService.setAlumnos([
@@ -24,7 +24,9 @@ export class AlumnosPage implements OnInit {
       {id:2, nombre: 'Isela Rodriguez',
       matricula: '855449'},
       {id:3, nombre: 'Estenban',
-      matricula: '0021554'}
+      matricula: '0021554'},
+      {id:4, nombre: 'Juanito Perez',
+      matricula: '6723423'}
     ]);
     this.alumnos = this.alumnoService.getAlumos();
     this.estado ='guardar';
