@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>reciever</ion-title>
+  </ion-toolbar>
+  <ion-back-button defaultHref="inicio"></ion-back-button>
+</ion-header>
+
+<ion-content>
+
+
+  
+
+  <p>
+    {{user | json}}
+  </p>
+
+  
+
+
+  <ion-grid>
+    <ion-list>
+    <ion-row>
+        <ion-col size="2">Nombre</ion-col>
+        <ion-col size="2">Altura</ion-col>
+        <ion-col size="2">Peso</ion-col>
+        <ion-col size="2">genero</ion-col>
+        <ion-col size="3">Nacimiento</ion-col>
+    </ion-row>
+    <ion-row *ngFor="let user of personajes">
+        <ion-col size="2">
+            {{user.name}}
+        </ion-col>
+        <ion-col size="2">
+            {{user.height}}
+        </ion-col>
+        <ion-col size="2">
+            {{user.mass}}
+        </ion-col>
+        <ion-col size="2">
+            {{user.gender}}
+        </ion-col>
+        <ion-col size="2">
+          {{user.birth_year}}
+      </ion-col>
+    </ion-row>
+  </ion-list>
+  </ion-grid>>
+</ion-content>

@@ -12,14 +12,20 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
-    path: 'presupuesto01',
+    path: 'presupuesto',
     loadChildren: () => import('./presupuesto01/presupuesto01.module').then( m => m.Presupuesto01PageModule)
   },
   {
     path: 'alumnos',
     loadChildren: () => import('./alumnos/alumnos.module').then( m => m.AlumnosPageModule)
+  },  {
+    path: 'inicio',
+    loadChildren: () => import('./inicio/inicio.module').then( m => m.InicioPageModule)
   },
-  
+  {
+    path: 'reciever',
+    loadChildren: () => import('./reciever/reciever.module').then( m => m.RecieverPageModule)
+  }
 
 ];
 
