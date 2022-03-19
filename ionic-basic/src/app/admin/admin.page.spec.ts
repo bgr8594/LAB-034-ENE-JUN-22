@@ -1,19 +1,19 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 
-import { FloatMenuComponent } from './float-menu.component';
+import { AdminPage } from './admin.page';
 
-describe('FloatMenuComponent', () => {
-  let component: FloatMenuComponent;
-  let fixture: ComponentFixture<FloatMenuComponent>;
+describe('AdminPage', () => {
+  let component: AdminPage;
+  let fixture: ComponentFixture<AdminPage>;
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ FloatMenuComponent ],
+      declarations: [ AdminPage ],
       imports: [IonicModule.forRoot()]
     }).compileComponents();
 
-    fixture = TestBed.createComponent(FloatMenuComponent);
+    fixture = TestBed.createComponent(AdminPage);
     component = fixture.componentInstance;
     fixture.detectChanges();
   }));
