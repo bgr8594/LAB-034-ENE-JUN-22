@@ -8,23 +8,23 @@ import { AlumnoService } from '../services/alumno.service';
   styleUrls: ['./alumnos.page.scss'],
 })
 export class AlumnosPage implements OnInit {
-
+  
   alumnos:Alumno[];
   nombre: string;
   matricula: string;
   estado: string;
   idActualizar: number;
   error: boolean = false;
-
+  
   constructor( private alumnoService: AlumnoService) { 
 
     this.alumnoService.setAlumnos([
-      {id:1, nombre: 'Gerardo Martinez',
-      matricula: '745589'},
-      {id:2, nombre: 'Isela Rodriguez',
-      matricula: '855449'},
-      {id:3, nombre: 'Estenban',
-      matricula: '0021554'}
+      {id:1, nombre: 'Alexis Trejo',
+      matricula: '1904034'},
+      {id:2, nombre: 'Angel Leon',
+      matricula: '1904035'},
+      {id:3, nombre: 'Brenda Lizbeth',
+      matricula: '1904036'},
     ]);
     this.alumnos = this.alumnoService.getAlumos();
     this.estado ='guardar';
