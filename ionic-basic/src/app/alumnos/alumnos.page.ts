@@ -72,5 +72,4 @@ export class AlumnosPage implements OnInit {
     this.nombre = alumno.nombre;
     this.idActualizar = alumno.id;
   }
-
 }
