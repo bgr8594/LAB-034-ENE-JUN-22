@@ -7,9 +7,9 @@ import { Alumno } from '../models/alumno.model';
 export class AlumnoService {
 
   private alumnos: Alumno[]=[];
-
+  
   constructor() { }
-
+  
   public agregarAlumno(alumno: Alumno){
     if(this.alumnos.length>0){
       alumno.id = this.alumnos.length + 1 ;

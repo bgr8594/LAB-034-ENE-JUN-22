@@ -6,6 +6,9 @@
   </ion-toolbar>
 </ion-header>
 
+
+
+
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
       <ion-toolbar>
@@ -15,7 +18,7 @@
   <ion-list>
       <ion-list-header>
           <ion-label>
-              Tipo de gastos y monto
+              Tipo de astos y monto
           </ion-label>
       </ion-list-header>
       <ion-item>
@@ -24,7 +27,6 @@
               <ion-select-option [value]="option" *ngFor="let option of  gastos">{{option}}
               </ion-select-option>
           </ion-select>
-
       </ion-item>
       <ion-item>
           <ion-label>
@@ -38,15 +40,13 @@
         </ion-label>
         <ion-input type="text" [(ngModel)]="descripcion" placeholder="Ingrese la descripcion"></ion-input>
     </ion-item>
-
-    <ion-item>
-      <ion-button type="button" (click)="guardar()">Guardar</ion-button>
-  </ion-item>
-  <ion-item>
-      <ion-label>Resultados</ion-label>
-      <ion-textarea color="{{errResultados}}" [(ngModel)]="resultados" clearOnEdit="true" readonly="true"></ion-textarea>
-  </ion-item>
-
+      <ion-item>
+          <ion-button type="button" (click)="guardar()">Guardar</ion-button>
+      </ion-item>
+      <ion-item>
+          <ion-label>Resultados</ion-label>
+          <ion-textarea color="{{errResultados}}" [(ngModel)]="resultados" clearOnEdit="true" readonly="true"></ion-textarea>
+      </ion-item>
   </ion-list>
   <ion-grid *ngIf="gasotsList.length>0">
     <ion-row>
@@ -72,5 +72,4 @@
         <ion-col size="1" (click)="borrarGasto(gasto.id)">X</ion-col>
     </ion-row>
 </ion-grid>
-
 </ion-content>

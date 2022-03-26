@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { ServicioCService } from '../services/servicio.service';
+import { ServicioCService } from '../services/servicio-c.service';
 
 @Component({
   selector: 'app-inicio',
@@ -27,7 +27,7 @@ export class InicioPage implements OnInit {
   gotReceiver(){
     this.serviceCService.sendObjectSource(this.user);
     this.serviceCService.sendListSource(this.list);
-
+    
     this.router.navigate(['/reciever']);
   }
 

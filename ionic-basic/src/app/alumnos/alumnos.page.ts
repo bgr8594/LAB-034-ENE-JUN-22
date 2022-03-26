@@ -8,14 +8,14 @@ import { AlumnoService } from '../services/alumno.service';
   styleUrls: ['./alumnos.page.scss'],
 })
 export class AlumnosPage implements OnInit {
-
+  
   alumnos:Alumno[];
   nombre: string;
   matricula: string;
   estado: string;
   idActualizar: number;
   error: boolean = false;
-
+  
   constructor( private alumnoService: AlumnoService) { 
 
     this.alumnoService.setAlumnos([
@@ -72,5 +72,4 @@ export class AlumnosPage implements OnInit {
     this.nombre = alumno.nombre;
     this.idActualizar = alumno.id;
   }
-
 }

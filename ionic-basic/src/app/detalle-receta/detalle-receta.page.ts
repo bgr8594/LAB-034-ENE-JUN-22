@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Receta } from '../models/receta.model';
-import { RecetasService } from '../services/recetas.services';
+import { RecetasService } from '../services/recetas.service';
 
 @Component({
   selector: 'app-detalle-receta',
@@ -12,9 +12,9 @@ export class DetalleRecetaPage implements OnInit {
 
   idReceta: number;
   receta: Receta;
-
+  
   constructor(private recetaService: RecetasService, 
-    private activateRouter: ActivatedRoute) { }
+    private router: Router, private activateRouter: ActivatedRoute) { }
 
   ngOnInit() {
     this.activateRouter.paramMap.subscribe(paramMap=>{
@@ -24,3 +24,4 @@ export class DetalleRecetaPage implements OnInit {
   }
 
 }
+

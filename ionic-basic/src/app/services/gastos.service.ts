@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Gasto } from '../models/gastos.models';
+import { Gasto } from '../models/gastos.model';
 
 @Injectable({
   providedIn: 'root'
@@ -7,7 +7,6 @@ import { Gasto } from '../models/gastos.models';
 export class GastosService {
 
   gastos: Gasto[]=[];
-
   constructor() { }
 
   agregar(gasto: Gasto){

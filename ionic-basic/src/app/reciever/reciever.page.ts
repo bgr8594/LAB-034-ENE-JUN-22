@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Personaje } from '../models/personaje.model';
-import { ServicioCService } from '../services/servicio.service';
+import { ServicioCService } from '../services/servicio-c.service';
 
 @Component({
   selector: 'app-reciever',
@@ -11,7 +11,7 @@ export class RecieverPage implements OnInit {
   user: any;
   list: any[];
   personajes: Personaje[];
-
+  
   constructor(private servicioCService: ServicioCService) { }
 
   ngOnInit() {

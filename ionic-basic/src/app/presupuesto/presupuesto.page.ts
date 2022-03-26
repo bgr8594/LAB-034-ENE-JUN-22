@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Gasto } from '../models/gastos.models';
+import { Gasto } from '../models/gastos.model';
 import { GastosService } from '../services/gastos.service';
 
 @Component({
@@ -9,6 +9,7 @@ import { GastosService } from '../services/gastos.service';
 })
 export class PresupuestoPage implements OnInit {
 
+  
   public gastos: string[]=['Directos','Fijos', 'Variables'];
   public selectedValue: any;
   public monto: number;
@@ -31,10 +32,10 @@ export class PresupuestoPage implements OnInit {
   cambioValor(value){
     console.log(value);
   }
-  
+
   guardar(){
     this.resultados ="";
-    if(this.monto!=null && this.selectedValue!=null && this.descripcion!= null) {
+    if(this.monto!=null && this.selectedValue!=null && this.descripcion!= null){
       this.errResultados = 'success';
       this.resultados = 'Gasto seleccionado: '+this.selectedValue+' \nMonto: '+this.monto+'\n'+
       'Descricion: '+this.descripcion;
@@ -51,10 +52,9 @@ export class PresupuestoPage implements OnInit {
       this.resultados ="No a completado los campos del formulario";
     }
   }
-  
+
   borrarGasto(idGasto: number){
     this.gastosService.borrarGasto(idGasto);
     this.gasotsList = this.gastosService.getGastos();
   }
-
 }
