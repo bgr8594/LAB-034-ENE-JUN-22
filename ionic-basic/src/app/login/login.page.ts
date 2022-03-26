@@ -22,7 +22,7 @@ export class LoginPage implements OnInit {
     private formBuilder: FormBuilder) { }
 
   ngOnInit() {
-    this.buildForm();
+    this.buildForm(); 
   }
 
   async onLogin(){
