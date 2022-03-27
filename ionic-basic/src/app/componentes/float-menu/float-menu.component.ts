@@ -44,21 +44,23 @@ export class FloatMenuComponent implements OnInit {
   onMenuOpen(){
     if(this.isLoged){
       this.datosMenu =[
-        {nombre: 'Alumnos',enlace:'/alumnos',
-  icono:'school-outline'},
-    {nombre: 'Receteas',enlace:'/receta',
+    {nombre: 'Alumnos',enlace:'/alumnos',
+    icono:'school-outline'},
+    {nombre: 'Recetas',enlace:'/receta',
     icono:'restaurant-outline'},
     {nombre: 'Presupuesto',enlace:'/presupuesto',
     icono:'cash-outline'},
-    {nombre: 'inicio',enlace:'/inicio',
+    {nombre: 'Inicio',enlace:'/inicio',
     icono:'navigate-outline'},
+    {nombre: 'Turismo',enlace:'/destinos',
+    icono:'airplane'},
     {nombre: 'Tabs',enlace:'/tabs',
     icono:'folder-outline'},
     {nombre: 'login',enlace:'/login',
     icono:'log-in-outline'},
-        {nombre: 'logout',enlace:'/home',
-        icono:'log-out-outline'}
-      ];
+    {nombre: 'logout',enlace:'/home',
+    icono:'log-out-outline'}
+    ];
       
     } else{
       this.datosMenu =[
@@ -68,5 +70,6 @@ export class FloatMenuComponent implements OnInit {
         icono:'log-out-outline'}
       ];
     }
+    
   }
 }
