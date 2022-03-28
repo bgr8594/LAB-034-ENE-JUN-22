@@ -4,6 +4,15 @@
 
 export const environment = {
   production: false
+  const firebaseConfig = {
+    apiKey: "AIzaSyAPcBmir5fLEVBBs_EIzmquu2m3EqK41Mk",
+    authDomain: "back-032-prollecto-1.firebaseapp.com",
+    projectId: "back-032-prollecto-1",
+    storageBucket: "back-032-prollecto-1.appspot.com",
+    messagingSenderId: "431252223009",
+    appId: "1:431252223009:web:3e0e8300ad4e8cfca9df60",
+    measurementId: "G-MCG8EMN5TB"
+  };
 };
 
 /*
