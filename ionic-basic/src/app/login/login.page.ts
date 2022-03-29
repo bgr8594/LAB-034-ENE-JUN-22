@@ -15,11 +15,12 @@ export class LoginPage implements OnInit {
 
   user: User = new User();
   ionicForm: FormGroup;
-
+  
   constructor(private router: Router,
     private modalCtrl: ModalController,
-    private autSvc: AuthserviceService,
-    private formBuilder: FormBuilder) { }
+    private autSvc: AuthserviceService, private formBuilder: FormBuilder) {
+
+    }
 
   ngOnInit() {
     this.buildForm();
@@ -29,7 +30,9 @@ export class LoginPage implements OnInit {
     const user = await this.autSvc.onLogin(this.user);
     if(user!=null && user.code ==undefined){
       console.log('Successfully logged in!');
-      this.router.navigate(['/home']);
+      setTimeout(() => {
+        this.router.navigate(['/home']);
+      }, 650);
     }
     else{
       if(user.code){
@@ -49,14 +52,13 @@ export class LoginPage implements OnInit {
     });
     return await modal.present();
   }
-  
+
   buildForm(){
     this.ionicForm = this.formBuilder.group({
       email: new FormControl('',{validators: [Validators.email,Validators.required]}),
       password: new FormControl('', {validators: [Validators.required, Validators.minLength(6), Validators.maxLength(6)]})
     });
   }
-
   hasError: any = (controlName: string, errorName: string) => {
 		return !this.ionicForm.controls[controlName].valid &&
 			this.ionicForm.controls[controlName].hasError(errorName) &&
@@ -78,5 +80,4 @@ export class LoginPage implements OnInit {
       this.onLogin();
     }
   }
-
 }
