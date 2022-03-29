@@ -19,12 +19,12 @@ export class AlumnosPage implements OnInit {
 	constructor(private alumnoService: AlumnoService) {
 
 		this.alumnoService.setAlumnos([
-			{id:1, nombre: 'Gerardo Martinez',
-				matricula: '745589'},
-				{id:2, nombre: 'Isela Rodriguez',
-					matricula: '855449'},
-					{id:3, nombre: 'Estenban',
-						matricula: '0021554'}
+			{id:1, nombre: 'Roberto Treviño',
+				matricula: '1915003'},
+				{id:2, nombre: 'Paulina Vega',
+					matricula: '1915004'},
+					{id:3, nombre: 'Katia Gonzalez',
+						matricula: '1915005'}
 		]);
 		this.alumnos = this.alumnoService.getAlumos();
 		this.estado ='guardar';
