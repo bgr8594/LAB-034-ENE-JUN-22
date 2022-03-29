@@ -18,3 +18,4 @@ import { RecieverPage } from './reciever.page';
   declarations: [RecieverPage]
 })
 export class RecieverPageModule {}
+//Practca 4

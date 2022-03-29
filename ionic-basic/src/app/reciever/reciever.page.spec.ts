@@ -22,3 +22,5 @@ describe('RecieverPage', () => {
     expect(component).toBeTruthy();
   });
 });
+
+//Practca 4
