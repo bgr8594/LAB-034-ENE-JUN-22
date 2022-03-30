@@ -7,7 +7,8 @@ import { MenuServiceService } from 'src/app/services/menu-service.service';
 
 @Component({
   selector: 'app-float-menu',
-@@ -9,10 +12,39 @@ import { MenuElement } from 'src/app/models/menu.model';
+  templateUrl: './float-menu.component.html',
+  styleUrls: ['./float-menu.component.scss'],
 })
 export class FloatMenuComponent implements OnInit {
 
@@ -16,15 +17,12 @@ export class FloatMenuComponent implements OnInit {
   public isLoged : any = false;
 
   datosMenu: MenuElement[] =[
-    {nombre: 'home',enlace:'/home',
-    icono:'home-outline'},
-    {nombre: 'Alumnos',enlace:'/alumnos',
     {nombre: 'login',enlace:'/login',
     icono:'log-in-outline'},
     {nombre: 'logout',enlace:'/home',
     icono:'log-out-outline'}
   ];
-
+  
   constructor(private router: Router, private authGuard: AuthGuard,
     private menuService: MenuServiceService,
     private afAuth: AngularFireAuth) { }
@@ -50,26 +48,20 @@ export class FloatMenuComponent implements OnInit {
   icono:'school-outline'},
     {nombre: 'Receteas',enlace:'/receta',
     icono:'restaurant-outline'},
-@@ -21,14 +53,20 @@ export class FloatMenuComponent implements OnInit {
+    {nombre: 'Presupuesto',enlace:'/presupuesto',
+    icono:'cash-outline'},
     {nombre: 'inicio',enlace:'/inicio',
     icono:'navigate-outline'},
+    {nombre: 'Turismo',enlace:'/destinos',
+    icono:'airplane'},
     {nombre: 'Tabs',enlace:'/tabs',
-    icono:'folder-outline'}
-  ];
-
-  constructor(private router: Router) { }
-
-  ngOnInit() {}
-
-  navegar(link: string){
-    this.router.navigate([link]);
     icono:'folder-outline'},
     {nombre: 'login',enlace:'/login',
     icono:'log-in-outline'},
         {nombre: 'logout',enlace:'/home',
         icono:'log-out-outline'}
       ];
-
+      
     } else{
       this.datosMenu =[
         {nombre: 'login',enlace:'/login',
@@ -80,4 +72,5 @@ export class FloatMenuComponent implements OnInit {
     }
   }
 }
-} 
+© 2022 GitHub, Inc.
+Terms
