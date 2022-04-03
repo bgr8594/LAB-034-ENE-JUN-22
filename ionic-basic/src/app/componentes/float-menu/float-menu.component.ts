@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { AuthGuard } from 'src/app/guards/auth.guard';
 import { MenuElement } from 'src/app/models/menu.model';
-import { MenuService } from 'src/app/services/menu.service';
+import { MenuServiceService } from 'src/app/services/menu-service.service';
 
 @Component({
   selector: 'app-float-menu',
@@ -24,7 +24,7 @@ export class FloatMenuComponent implements OnInit {
   ];
   
   constructor(private router: Router, private authGuard: AuthGuard,
-    private menuService: MenuService,
+    private menuService: MenuServiceService,
     private afAuth: AngularFireAuth) { }
 
   ngOnInit() {
@@ -52,6 +52,8 @@ export class FloatMenuComponent implements OnInit {
     icono:'cash-outline'},
     {nombre: 'inicio',enlace:'/inicio',
     icono:'navigate-outline'},
+    {nombre: 'Turismo',enlace:'/destinos',
+    icono:'airplane'},
     {nombre: 'Tabs',enlace:'/tabs',
     icono:'folder-outline'},
     {nombre: 'login',enlace:'/login',
