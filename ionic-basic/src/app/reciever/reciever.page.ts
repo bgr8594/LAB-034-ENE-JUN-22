@@ -11,6 +11,8 @@ export class RecieverPage implements OnInit {
   user: any;
   list: any[];
   personajes: Personaje[];
+  personajesPropiedades: any[];
+  propiedades: string[];
   
   constructor(private servicioCService: ServicioCService) { }
 
@@ -26,7 +28,19 @@ export class RecieverPage implements OnInit {
 
     this.servicioCService.getPersonajes().subscribe((response: any)=>{
       this.personajes = response.results;
+      this.propiedades = Object.getOwnPropertyNames(this.personajes[0]);
+      this.personajesPropiedades = this.personajes.map(a => this.objToDict(a));
+    },
+    (_err: any) => {
+	    this.propiedades = ["response"]
+	    this.personajesPropiedades = [{response: "error"}]
     });
   }
 
+  objToDict(obj) {
+	  return Object.keys(obj).reduce((result, key) => {
+		  result[key] = obj[key];
+		  return result;
+	  }, {});
+  }
 }

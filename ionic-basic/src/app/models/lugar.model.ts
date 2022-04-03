@@ -1,9 +1,8 @@
 export class Lugar {
     nombre: string;
+    id?: string;
 
     ubicacion?:{latitud:string, longitud:string}
-
-
 
         constructor(){
 
@@ -18,4 +17,4 @@ export class Lugar {
             this.ubicacion.longitud = Longiutd;
 
         }
-    }
+}
