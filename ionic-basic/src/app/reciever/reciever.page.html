@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>reciever</ion-title>
+  </ion-toolbar>
+  <ion-back-button defaultHref="inicio"></ion-back-button>
+</ion-header>
+
+<ion-content>
+  
+
+    <p>Personajes: </p>
+    <ion-grid *ngFor="let personaje of personajes">
+      <ion-row><p>
+        Nombre: {{personaje.name}} <br>
+        Género: {{personaje.gender}} <br>
+        Cumpleaños:{{personaje.birth_year}} <br>
+        Color de ojos: {{personaje.eye_color}} <br>
+        Color de pelo: {{personaje.hair_color}}
+        </ion-row>
+    </ion-grid>
+    <p>
+     
+    </p>
+
+
+</ion-content>
