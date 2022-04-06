@@ -4,8 +4,8 @@ import { ServicioCService } from '../services/servicio-c.service';
 
 @Component({
   selector: 'app-reciever',
-  templateUrl: './reciever.page.html',
-  styleUrls: ['./reciever.page.scss'],
+  templateUrl: './receiver.page.html',
+  styleUrls: ['./receiver.page.scss'],
 })
 export class RecieverPage implements OnInit {
   user: any;

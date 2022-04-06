@@ -4,9 +4,9 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { RecieverPageRoutingModule } from './reciever-routing.module';
+import { RecieverPageRoutingModule } from './receiver-routing.module';
 
-import { RecieverPage } from './reciever.page';
+import { RecieverPage } from './receiver.page';
 
 @NgModule({
   imports: [
