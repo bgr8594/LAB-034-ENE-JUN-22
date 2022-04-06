@@ -35,6 +35,10 @@ const routes: Routes = [
     path: 'reciever',
     loadChildren: () => import('./reciever/reciever.module').then( m => m.RecieverPageModule)
   },
+  {
+    path: 'tabs',
+    loadChildren: () => import('./tabs/tabs.module').then( m => m.TabsPageModule)
+  },
 ];
 
 @NgModule({
