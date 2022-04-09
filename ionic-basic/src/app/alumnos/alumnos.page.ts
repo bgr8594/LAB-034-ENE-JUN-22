@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Alumno } from '../models/alumno.model';
 import { AlumnoService } from '../services/alumno.service';
+import {FormGroup, FormBuilder, Validators, FormControl, AbstractControl} from '@angular/forms';
 
 
 @Component({
@@ -16,8 +17,10 @@ export class AlumnosPage implements OnInit {
   estado: string;
   idActualizar: number;
   error: boolean = false;
+  ionicForm: FormGroup;
 
-  constructor( private alumnoService: AlumnoService) { 
+  constructor( private alumnoService: AlumnoService,
+    private formBuilder: FormBuilder) { 
 
     this.alumnoService.setAlumnos([
       {id:1, nombre: 'Gerardo Martinez',
@@ -33,6 +36,7 @@ export class AlumnosPage implements OnInit {
   }
 
   ngOnInit() {
+    this.buildForm();
   }
 
   public guardar(){
@@ -72,6 +76,34 @@ export class AlumnosPage implements OnInit {
     this.matricula = alumno.matricula;
     this.nombre = alumno.nombre;
     this.idActualizar = alumno.id;
+  }
+  
+  buildForm(){
+    this.ionicForm = this.formBuilder.group({
+      mat: new FormControl('',{validators: [Validators.maxLength(7), Validators.minLength(7),Validators.required]}),
+      nom: new FormControl('', {validators: [Validators.required ]})
+    });
+  }
+
+  hasError: any = (controlName: string, errorName: string) => {
+		return !this.ionicForm.controls[controlName].valid &&
+			this.ionicForm.controls[controlName].hasError(errorName) &&
+			this.ionicForm.controls[controlName].touched;
+	}
+
+  notZero(control: AbstractControl) {
+		if (control.value && control.value.monto <= 0) {
+			return { 'notZero': true };
+		}
+		return null;
+	}
+  
+  submitForm(){
+    if(this.ionicForm.valid){
+      this.matricula= this.ionicForm.get('mat').value;
+      this.nombre = this.ionicForm.get('nom').value;
+
+    }
   }
 
 }

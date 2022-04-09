@@ -5,18 +5,33 @@
 </ion-header>
 
 <ion-content>
+    <form [formGroup]="ionicForm" (ngSubmit)="submitForm()" novalidate></form>
   <ion-list>
       <ion-item>
-          <ion-label>
+         <ion-label>
               Matricula:
           </ion-label>
-          <ion-input type="text" [(ngModel)]="matricula" placeholder="Ingrese la matricula"></ion-input>
+         <!--formControlName="mat"-->
+          <ion-input type = "matricula" ></ion-input>
+            <ion-text color="danger" *ngIf="hasError('mat','maxLenght')">
+                <h5>Debe ser una matricula valida</h5>
+            </ion-text>
+            <ion-text color="danger" *ngIf="hasError('mat','required')">
+                <h5>Campo requerido</h5>
+            </ion-text>
       </ion-item>
       <ion-item>
           <ion-label>
               Nombre:
           </ion-label>
-          <ion-input type="text" [(ngModel)]="nombre" placeholder="Ingrese nombre del alumno"></ion-input>
+          <!--formControlName="nom" Después de muchas horas intentando,
+        nunca pude agregar los formControlName en el html :´( -->
+          <ion-input formControlName="nom" ></ion-input>
+                <ion-text color="danger" *ngIf="hasError('nom','required')">
+                    <h5>Campo requerido</h5>
+                </ion-text>
+                
+
       </ion-item>
       <ion-item>
           <ion-button type="button" (click)="guardar()">{{estado}}</ion-button>
