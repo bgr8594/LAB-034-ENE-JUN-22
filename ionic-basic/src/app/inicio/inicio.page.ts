@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { ServicioCService } from '../services/servicio-c.service';
+import  { ServicioCService } from '../services/servicio-c.service';
 
 @Component({
   selector: 'app-inicio',

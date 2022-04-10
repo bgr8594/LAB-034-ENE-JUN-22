@@ -1,4 +1,4 @@
-export interface Personaje{
+ export interface Personaje{
     birth_year: string;
     created:  string;
     edited:  string;

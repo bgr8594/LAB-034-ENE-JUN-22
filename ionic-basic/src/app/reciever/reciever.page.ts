@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Personaje } from '../models/personaje.model';
-import { ServicioCService } from '../services/servicio-c.service';
+ import { ServicioCService } from '../services/servicio-c.service';
 
 @Component({
   selector: 'app-reciever',
