@@ -13,7 +13,7 @@ export class RecieverPage implements OnInit {
   list: any[];
   personajes: Personaje[];
   
-  constructor(private servicioCService: ServicioCService) { }
+  constructor(  private servicioCService: ServicioCService) { }
 
   ngOnInit() {
     this.servicioCService.$getObjectSource.subscribe(data=>{
