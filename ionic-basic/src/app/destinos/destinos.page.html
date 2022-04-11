@@ -48,8 +48,12 @@
                 </ion-text>
             </ion-col>
             <ion-col>
-                <ion-text>
-                    {{lugar.ubicacion}}
+                <ion-text *ngIf="lugar.latitud">
+                    latitud: {{lugar.latitud}},
+                    longitud: {{lugar.longitud}}
+                </ion-text>
+                <ion-text *ngIf="!lugar.latitud">
+                    No se ha registrado ubicacion
                 </ion-text>
             </ion-col>
             <ion-col>

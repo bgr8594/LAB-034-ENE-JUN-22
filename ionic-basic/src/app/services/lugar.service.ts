@@ -11,8 +11,9 @@ export class LugarService {
 
   altaLugar(lugar: Lugar){
     const lugarTemp: any ={
+      longitud: lugar.longitud,
+      latitud: lugar.latitud,
       nombre:lugar.nombre,
-      ubicacion: {longitud:'', latitud:''}
     };
     return this.dbFirestore.collection('lugar').add(lugarTemp);
   }

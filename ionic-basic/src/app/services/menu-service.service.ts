@@ -10,7 +10,7 @@ export class MenuServiceService {
   $getTitleMenu = this.objectSource.asObservable();
 
   constructor() { }
-
+  
   setTitle(data: any){
     this.objectSource.next(data);
   }

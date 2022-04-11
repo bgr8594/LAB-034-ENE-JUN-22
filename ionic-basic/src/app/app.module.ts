@@ -9,15 +9,17 @@ import { AppRoutingModule } from './app-routing.module';
 import { ComponentesModule } from './componentes/componentes.module';
 import {AngularFireModule} from 'angularfire2';
 import {AngularFireAuthModule} from 'angularfire2/auth';
-import { environment } from 'src/environments/environment';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
+import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { environment } from '../environments/environment';
+import { provideDatabase,getDatabase } from '@angular/fire/database';
 
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
   imports: [ComponentesModule, BrowserModule, IonicModule.forRoot(), AppRoutingModule,HttpClientModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
-    AngularFireAuthModule, AngularFirestoreModule ],
+    AngularFireAuthModule, AngularFirestoreModule, provideFirebaseApp(() => initializeApp(environment.firebase)), provideDatabase(() => getDatabase()) ],
   providers: [NavParams, HttpClientModule,{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],
 })
