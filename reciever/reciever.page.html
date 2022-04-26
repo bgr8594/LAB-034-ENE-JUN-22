@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>reciever</ion-title>
+  </ion-toolbar>
+  <ion-back-button defaultHref="inicio"></ion-back-button>
+</ion-header>
+</ion-grid>
+<ion-grid>
+    <ion-row>
+
+        <ion-col *ngIf="personajes.length>0"></ion-col>
+        <ion-col> size="1">id</ion-col>
+        <ion-col> size="7">Name</ion-col>
+        <ion-col> size="3">height</ion-col>
+        <ion-col> size="8">hair color</ion-col>
+    </ion-row>
+
+<ion-content>
+  <p>
+    {{user | json}}
+  </p>
+
+  <p>{{personajes | json}}
+  </p>
+</ion-content>
