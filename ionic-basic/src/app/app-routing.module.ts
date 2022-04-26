@@ -57,9 +57,10 @@ const routes: Routes = [
     loadChildren: () => import('./destinos/destinos.module').then( m => m.DestinosPageModule)
   },
   {
-    path: 'destinos',
-    loadChildren: () => import('./destinos/destinos.module').then( m => m.DestinosPageModule)
+    path: 'destinos-api', canActivate:[AuthGuard],
+    loadChildren: () => import('./destinos-api/destinos-api.module').then( m => m.DestinosApiPageModule)
   }
+
 
 ];
 

@@ -52,7 +52,9 @@ export class FloatMenuComponent implements OnInit {
     icono:'cash-outline'},
     {nombre: 'inicio',enlace:'/inicio',
     icono:'navigate-outline'},
-    {nombre: 'Turismo',enlace:'/destinos',
+    {nombre: 'Turismo firebase',enlace:'/destinos',
+    icono:'airplane'},
+    {nombre: 'Turismo api',enlace:'destinos-api',
     icono:'airplane'},
     {nombre: 'Tabs',enlace:'/tabs',
     icono:'folder-outline'},
@@ -72,5 +74,3 @@ export class FloatMenuComponent implements OnInit {
     }
   }
 }
-© 2022 GitHub, Inc.
-Terms
