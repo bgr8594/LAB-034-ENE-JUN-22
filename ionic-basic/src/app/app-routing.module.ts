@@ -59,9 +59,13 @@ const routes: Routes = [
   {
     path: 'destinos-api', canActivate:[AuthGuard],
     loadChildren: () => import('./destinos-api/destinos-api.module').then( m => m.DestinosApiPageModule)
+  },
+  {
+    path: 'galeria',
+    loadChildren: () => import('./galeria/galeria.module').then( m => m.GaleriaPageModule)
   },  {
-    path: 'destinos-api',
-    loadChildren: () => import('./destinos-api/destinos-api.module').then( m => m.DestinosApiPageModule)
+    path: 'galeria',
+    loadChildren: () => import('./galeria/galeria.module').then( m => m.GaleriaPageModule)
   }
 
 
@@ -75,5 +79,3 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
-
-//Practca 4
