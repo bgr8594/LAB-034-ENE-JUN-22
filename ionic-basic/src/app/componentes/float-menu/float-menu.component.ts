@@ -55,6 +55,7 @@ export class FloatMenuComponent implements OnInit {
     {nombre: 'Turismo firebase',enlace:'/destinos',
     icono:'airplane'},
     {nombre: 'Turismo api',enlace:'destinos-api',
+    icono:'airplane'},
     {nombre: 'Tabs',enlace:'/tabs',
     icono:'folder-outline'},
     {nombre: 'login',enlace:'/login',
