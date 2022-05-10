@@ -14,7 +14,7 @@ export class GooglemapsService {
   constructor() { }
 
   init(renderer: any, document: any){
-
+    
 
     return new Promise((resolve, reject) => {
       if(this.mapsloaded){

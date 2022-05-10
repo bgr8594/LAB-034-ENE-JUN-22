@@ -117,7 +117,7 @@ export class DestinosApiPage implements OnInit {
   }
 
   getPosition(): Promise<any> {
-		return new Promise((_resolve: any, _reject: any): any => {
+		return new Promise((resolve: any, reject: any): any => {
 			navigator.geolocation.getCurrentPosition((resp: any) => {
 				this.latitud = resp.coords.latitude;
 				this.longitud = resp.coords.longitude;
@@ -166,4 +166,5 @@ export class DestinosApiPage implements OnInit {
       console.log('datos de ubiciacion actualizados, latitud: '+this.latitud+' \nlongitud:'+this.longitud);
     }
   }
+
 }

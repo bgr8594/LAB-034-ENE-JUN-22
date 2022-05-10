@@ -1,19 +1,19 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 
-import { RecieverPage } from './reciever.page';
+import { GaleriaPage } from './galeria.page';
 
-describe('RecieverPage', () => {
-  let component: RecieverPage;
-  let fixture: ComponentFixture<RecieverPage>;
+describe('GaleriaPage', () => {
+  let component: GaleriaPage;
+  let fixture: ComponentFixture<GaleriaPage>;
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ RecieverPage ],
+      declarations: [ GaleriaPage ],
       imports: [IonicModule.forRoot()]
     }).compileComponents();
 
-    fixture = TestBed.createComponent(RecieverPage);
+    fixture = TestBed.createComponent(GaleriaPage);
     component = fixture.componentInstance;
     fixture.detectChanges();
   }));
@@ -22,5 +22,3 @@ describe('RecieverPage', () => {
     expect(component).toBeTruthy();
   });
 });
-
-//Practca 4

@@ -1,5 +1,5 @@
 import { Component, OnInit, Renderer2, Input, ElementRef, Inject, ViewChild } from '@angular/core';
-import { modalController } from '@ionic/core'
+import { modalController } from '@ionic/core';
 import { Geolocation } from '@capacitor/geolocation';
 import { GooglemapsService } from './googlemaps.service';
 import { DOCUMENT } from '@angular/common';

@@ -3,8 +3,9 @@
         <ion-title>Destinos</ion-title>
     </ion-toolbar>
 </ion-header>
+
 <ion-content padding>
-    <form formGroup="ionicForm" (ngSubmit)="submitForm()" novalidate>
+    <form [formGroup]="ionicForm" (ngSubmit)="submitForm()" novalidate>
         <ion-item>
             <ion-label>
                 Destino
@@ -27,6 +28,7 @@
             <ion-button *ngIf="editando" type="button" color="danger" size="larger" (click)="cancelarEdicion()">Cancelar</ion-button>
         </ion-item-divider>
     </form>
+
     <ion-item-divider></ion-item-divider>
     <ion-grid>
         <ion-row>
@@ -41,8 +43,10 @@
                 </ion-text>
             </ion-col>
             <ion-col>
+
             </ion-col>
             <ion-col>
+
             </ion-col>
         </ion-row>
         <ion-row *ngFor="let lugar of destinos">

@@ -6,13 +6,14 @@ import { Lugar } from '../models/lugar.model';
   providedIn: 'root'
 })
 export class LugarService {
+
   constructor(private dbFirestore: AngularFirestore) { }
 
   altaLugar(lugar: Lugar){
     const lugarTemp: any ={
       nombre:lugar.nombre,
       longitud:lugar.latitud, 
-      latitud:lugar.longitud  
+      latitud:lugar.longitud
     };
     return this.dbFirestore.collection('lugar').add(lugarTemp);
   }
@@ -49,3 +50,4 @@ export class LugarService {
   }
 
 }
+//lugar.service.spec.ts

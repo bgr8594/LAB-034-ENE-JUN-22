@@ -11,6 +11,7 @@ import { GooglemapsComponent } from '../googlemaps/googlemaps.component';
   styleUrls: ['./destinos.page.scss'],
 })
 export class DestinosPage implements OnInit {
+
   lugar: Lugar = new Lugar();
   destinos: any[] = [];
   ionicForm: FormGroup;
@@ -40,6 +41,7 @@ export class DestinosPage implements OnInit {
         console.error(error);
       });
   }
+
   altaLugar(){
     this.lugarService.altaLugar(this.lugar);
     //this.lugarService.getLugares(this.destinos);
@@ -70,7 +72,7 @@ export class DestinosPage implements OnInit {
       }
     }
   }
-  
+
   buildForm(){
     this.ionicForm = this.formBuilder.group({
       nombre: new FormControl('',{validators: [Validators.required]})
@@ -83,7 +85,7 @@ export class DestinosPage implements OnInit {
       this.ionicForm.controls[controlName].touched;
   }
 
-  editarLugar(_id: any, lugar: any) {
+  editarLugar(id: any, lugar: any) {
     this.editando = true;
     this.lugar = lugar;
     this.estado = "Editar el lugar";
@@ -96,6 +98,7 @@ export class DestinosPage implements OnInit {
     this.ionicForm.reset();
     this.lugarService.deleteLugar(id);
   }
+
   cancelarEdicion(){
     this.estado = "Alta destino";
     this.editando = false;
@@ -104,7 +107,7 @@ export class DestinosPage implements OnInit {
   }  
 
   getPosition(): Promise<any> {
-    return new Promise((_resolve: any, _reject: any): any => {
+    return new Promise((resolve: any, reject: any): any => {
       navigator.geolocation.getCurrentPosition((resp: any) => {
         this.latitud = resp.coords.latitude;
         this.longitud = resp.coords.longitude;
@@ -118,7 +121,7 @@ export class DestinosPage implements OnInit {
       }, {timeout: 5000, enableHighAccuracy: true });
     });
   }
-  
+
   async addDirection(){
     let positionInput: any = {
       lat: -2.898116,
@@ -149,5 +152,4 @@ export class DestinosPage implements OnInit {
       console.log('datos de ubiciacion actualizados, latitud: '+this.latitud+' \nlongitud:'+this.longitud);
     }
   } 
-
 }

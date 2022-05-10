@@ -11,7 +11,7 @@ import { MenuService } from 'src/app/services/menu.service';
   styleUrls: ['./float-menu.component.scss'],
 })
 export class FloatMenuComponent implements OnInit {
-  
+
   titleMenu: string='home';
 
   public isLoged : any = false;
@@ -44,8 +44,8 @@ export class FloatMenuComponent implements OnInit {
   onMenuOpen(){
     if(this.isLoged){
       this.datosMenu =[
-    {nombre: 'Alumnos',enlace:'/alumnos',
-    icono:'school-outline'},
+        {nombre: 'Alumnos',enlace:'/alumnos',
+  icono:'school-outline'},
     {nombre: 'Recetas',enlace:'/receta',
     icono:'restaurant-outline'},
     {nombre: 'Presupuesto',enlace:'/presupuesto',
@@ -60,9 +60,9 @@ export class FloatMenuComponent implements OnInit {
     icono:'folder-outline'},
     {nombre: 'login',enlace:'/login',
     icono:'log-in-outline'},
-    {nombre: 'logout',enlace:'/home',
-    icono:'log-out-outline'}
-    ];
+        {nombre: 'logout',enlace:'/home',
+        icono:'log-out-outline'}
+      ];
       
     } else{
       this.datosMenu =[
@@ -72,6 +72,5 @@ export class FloatMenuComponent implements OnInit {
         icono:'log-out-outline'}
       ];
     }
-    
   }
 }

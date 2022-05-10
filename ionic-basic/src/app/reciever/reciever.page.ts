@@ -8,6 +8,7 @@ import { ServicioCService } from '../services/servicio-c.service';
   styleUrls: ['./reciever.page.scss'],
 })
 export class RecieverPage implements OnInit {
+
   user: any;
   list: any[];
   personajes: Personaje[];
@@ -31,7 +32,7 @@ export class RecieverPage implements OnInit {
       this.propiedades = Object.getOwnPropertyNames(this.personajes[0]);
       this.personajesPropiedades = this.personajes.map(a => this.objToDict(a));
     },
-    (_err: any) => {
+    (err: any) => {
 	    this.propiedades = ["response"]
 	    this.personajesPropiedades = [{response: "error"}]
     });
@@ -43,4 +44,7 @@ export class RecieverPage implements OnInit {
 		  return result;
 	  }, {});
   }
+
 }
+
+//Practca 4

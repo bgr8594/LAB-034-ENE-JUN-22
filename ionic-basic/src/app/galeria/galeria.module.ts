@@ -4,18 +4,17 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { RecieverPageRoutingModule } from './reciever-routing.module';
+import { GaleriaPageRoutingModule } from './galeria-routing.module';
 
-import { RecieverPage } from './reciever.page';
+import { GaleriaPage } from './galeria.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    RecieverPageRoutingModule
+    GaleriaPageRoutingModule
   ],
-  declarations: [RecieverPage]
+  declarations: [GaleriaPage]
 })
-export class RecieverPageModule {}
-//Practca 4
+export class GaleriaPageModule {}
