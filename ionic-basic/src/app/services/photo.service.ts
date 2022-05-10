@@ -7,7 +7,7 @@ import { Storage } from '@capacitor/storage';
 import { Platform } from '@ionic/angular';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root'    
 })
 export class PhotoService {
 
@@ -18,7 +18,7 @@ export class PhotoService {
 
 
   public async loadSaved() {
-    // Retrieve cached photo array data
+    // Retrieve cached photo array data  //
     const photoList = await Storage.get({ key: this.PHOTO_STORAGE });
     this.photos = JSON.parse(photoList.value) || [];
 

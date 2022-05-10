@@ -63,7 +63,8 @@ const routes: Routes = [
   {
     path: 'galeria',
     loadChildren: () => import('./galeria/galeria.module').then( m => m.GaleriaPageModule)
-  },  {
+  },
+  {
     path: 'galeria',
     loadChildren: () => import('./galeria/galeria.module').then( m => m.GaleriaPageModule)
   }
