@@ -1,8 +1,9 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+
 import { GaleriaPage } from './galeria.page';
 
-const routes: Routes = [             
+const routes: Routes = [
   {
     path: '',
     component: GaleriaPage

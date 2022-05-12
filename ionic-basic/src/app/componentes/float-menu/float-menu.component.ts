@@ -46,11 +46,11 @@ export class FloatMenuComponent implements OnInit {
       this.datosMenu =[
         {nombre: 'Alumnos',enlace:'/alumnos',
   icono:'school-outline'},
-    {nombre: 'Recetas',enlace:'/receta',
+    {nombre: 'Receteas',enlace:'/receta',
     icono:'restaurant-outline'},
     {nombre: 'Presupuesto',enlace:'/presupuesto',
     icono:'cash-outline'},
-    {nombre: 'Inicio',enlace:'/inicio',
+    {nombre: 'inicio',enlace:'/inicio',
     icono:'navigate-outline'},
     {nombre: 'Turismo firebase',enlace:'/destinos',
     icono:'airplane'},
