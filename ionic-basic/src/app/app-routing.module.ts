@@ -14,9 +14,7 @@ const routes: Routes = [
   {
     path: 'presupuesto',
     loadChildren: () => import('./presupuesto/presupuesto.module').then( m => m.PresupuestoPageModule)
-  },
-
-
+  }
 ];
 
 @NgModule({
