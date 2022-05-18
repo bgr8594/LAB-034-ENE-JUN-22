@@ -18,20 +18,22 @@ const routes: Routes = [
   {
     path: 'alumnos',
     loadChildren: () => import('./alumnos/alumnos.module').then( m => m.AlumnosPageModule)
-  },  {
+  },
+  {
     path: 'inicio',
     loadChildren: () => import('./inicio/inicio.module').then( m => m.InicioPageModule)
   },
   {
     path: 'reciever',
     loadChildren: () => import('./reciever/reciever.module').then( m => m.RecieverPageModule)
-  },  {
-    path: 'inicio',
-    loadChildren: () => import('./inicio/inicio.module').then( m => m.InicioPageModule)
   },
   {
-    path: 'reciever',
-    loadChildren: () => import('./reciever/reciever.module').then( m => m.RecieverPageModule)
+  path: 'receta',
+  loadChildren: () => import('./receta/receta.module').then( m => m.RecetaPageModule)
+  },
+  {
+  path: 'detalle-receta',
+  loadChildren: () => import('./detalle-receta/detalle-receta.module').then( m => m.DetalleRecetaPageModule)
   }
 
 ];
