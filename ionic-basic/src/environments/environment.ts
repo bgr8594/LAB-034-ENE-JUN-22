@@ -11,8 +11,10 @@ export const environment = {
     storageBucket: "ionic-basic-1954387.appspot.com",
     messagingSenderId: "100786104961",
     appId: "1:100786104961:web:779a3bcefd8894449d3b80",
-  }
+  },
+  apikeyMaps: 'AIzaSyDBiLJRVecZ0rrL_jGxfUHDwMnCoW6wjQI'
 };
+
 
 /*
  * For easier debugging in development mode, you can import the following file
