@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Ionic-Basic-1954387</string>
+    <string name="title_activity_main">Ionic-Basic-1954387</string>
+    <string name="package_name">com.capacitordemo.fcfm</string>
+    <string name="custom_url_scheme">com.capacitordemo.fcfm</string>
+</resources>

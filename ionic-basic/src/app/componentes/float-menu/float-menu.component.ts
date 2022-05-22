@@ -46,11 +46,11 @@ export class FloatMenuComponent implements OnInit {
       this.datosMenu =[
         {nombre: 'Alumnos',enlace:'/alumnos',
   icono:'school-outline'},
-    {nombre: 'Receteas',enlace:'/receta',
+    {nombre: 'Recetas',enlace:'/receta',
     icono:'restaurant-outline'},
     {nombre: 'Presupuesto',enlace:'/presupuesto',
     icono:'cash-outline'},
-    {nombre: 'inicio',enlace:'/inicio',
+    {nombre: 'Inicio',enlace:'/inicio',
     icono:'navigate-outline'},
     {nombre: 'Turismo firebase',enlace:'/destinos',
     icono:'airplane'},
@@ -58,18 +58,14 @@ export class FloatMenuComponent implements OnInit {
     icono:'airplane'},
     {nombre: 'Tabs',enlace:'/tabs',
     icono:'folder-outline'},
-    {nombre: 'login',enlace:'/login',
-    icono:'log-in-outline'},
-        {nombre: 'logout',enlace:'/home',
+        {nombre: 'Salir',enlace:'/home',
         icono:'log-out-outline'}
       ];
       
     } else{
       this.datosMenu =[
-        {nombre: 'login',enlace:'/login',
-        icono:'log-in-outline'},
-        {nombre: 'logout',enlace:'/home',
-        icono:'log-out-outline'}
+        {nombre: 'Entrar',enlace:'/login',
+        icono:'log-in-outline'}
       ];
     }
   }

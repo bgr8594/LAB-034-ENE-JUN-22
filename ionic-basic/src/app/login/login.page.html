@@ -1,6 +1,6 @@
 <ion-header>
     <ion-toolbar color="primary">
-        <ion-title>Login</ion-title>
+        <ion-title>Iniciar Sesion</ion-title>
     </ion-toolbar>
   </ion-header>
   
@@ -8,7 +8,7 @@
       <form [formGroup]="ionicForm" (ngSubmit)="submitForm()" novalidate>
     <ion-item>
         <ion-label>
-            Email
+            Correo:
         </ion-label>
         <ion-input type="email" formControlName="email"></ion-input>
         <ion-text color="danger" *ngIf="hasError('email','email')">
@@ -20,7 +20,7 @@
     </ion-item>
     <ion-item>
         <ion-label>
-            Password
+            Contraseña:
         </ion-label>
         <ion-input type="password" formControlName="password"></ion-input>
               <ion-text color="danger" *ngIf="!ionicForm.valid && ionicForm.controls['password'].touched && !hasError('password','required')">
@@ -31,8 +31,8 @@
               </ion-text>
     </ion-item>
     <ion-item-divider>
-      <ion-button size="larger" type="submit">Login</ion-button>
-      <ion-button size="larger" routerLink="/register">New</ion-button>
+      <ion-button size="larger" type="submit">Entrar</ion-button>
+      <ion-button size="larger" routerLink="/register">Registrar</ion-button>
     </ion-item-divider>
     </form>
   </ion-content>
